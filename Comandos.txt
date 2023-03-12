@@ -1,0 +1,27 @@
+Comando para desabilitar o firewall do Windows:
+
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+
+ 
+
+Comando para instalar a role de DNS:
+
+Install-WindowsFeature -Name DNS -IncludeManagementTools
+
+ 
+
+Endereço IP do DNS do Azure:
+
+168.63.129.16
+
+ 
+
+Comandos para validação de testes de conexão:
+
+Comando01 - Test-NetConnection -ComputerName afs-tftec-01management.centralus.afs.azure.net -Port 443
+
+Comando02 -Test-NetConnection -ComputerName stoafstftec001.file.core.windows.net -Port 443
+
+Comando03 - Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
+
+Test-StorageSyncNetworkConnectivity
